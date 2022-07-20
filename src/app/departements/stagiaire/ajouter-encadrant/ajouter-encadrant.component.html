@@ -1,0 +1,47 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+      <div class="alert alert-success w-50" style="margin:0 auto;text-align: center;" *ngIf="succes" role="alert">
+        L'opération est effectuée avec succès 
+      </div>
+        <div id="form" class="w-100" style="margin-top:7%;">
+            <div class="row mb-4" id="1" class="d-flex w-100">
+              <div class="col w-75" >
+          <form  style="font-family: Arial, Helvetica, sans-serif;font-weight: bold;" class="w-100">
+              <div class="row mb-4">
+              <div class="col">
+              <!-- Text input -->
+
+             
+             
+             <!-- 2 column grid layout with text inputs for the first and last names -->
+             <div >
+               <label class="form-label" for="3">Ajouter un encadrant:</label>
+              <div  id="3">
+                  <div class="form-outline mb-4">
+                      <input type="text"  class="form-control" [(ngModel)]="encadrant.nom_encadrant" placeholder="Nom" name="nom_encadrant"  />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text"  class="form-control" [(ngModel)]="encadrant.prenom_encadrant" placeholder="Prénom" name="prenom_encadrant"  />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text"  class="form-control" [(ngModel)]="encadrant.email_encadrant" placeholder="Email" name="email_encadrant"  />
+                </div>
+              </div>
+             </div>
+            
+          </div></div>
+              <!-- Submit button -->
+              <button  class="btn btn-primary w-25 mb-4" (click)="ajouter()">Ajouter</button>
+            </form>
+            </div>
+            
+          </div>
+          
+            
+          </div>
+     </div>
+    </div>
+</section>

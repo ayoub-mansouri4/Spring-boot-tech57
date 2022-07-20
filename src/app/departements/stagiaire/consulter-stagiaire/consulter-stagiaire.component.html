@@ -1,0 +1,49 @@
+
+<app-current-position></app-current-position>
+
+<table class="table table-bordered"  style="font-size:90% ;">
+    <thead>
+      <tr class="table-active">
+        <th scope="col">Numéro</th>
+        <th scope="col">Nom et prenom</th>
+        <th scope="col">CIN</th>
+        <th scope="col">Télephone</th>
+        <th scope="col">Mail</th>
+        <th scope="col">Spécialité</th>
+        <th scope="col">Etablissement</th>
+        <th scope="col">Durée (aaaa/mm/jj) </th>
+        <th scope="col">Date depot dossier (aaaa/mm/jj) </th>
+        <th scope="col">Type de Stage </th>
+        <th scope="col">Etat dossier</th>
+        <th scope="col">Sujet du stage</th>
+        <th scope="col">Encadrant</th>
+
+
+
+
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let stagiaire of liste_Stagiaires">
+        <th scope="row">{{stagiaire.id_stag}}</th>
+        <td><a routerLink="/stagiaire/absence-stagiaire" [queryParams]="{id:stagiaire.id_stag}">{{stagiaire.nom_stag}} {{stagiaire.prenom_stag}}</a></td>
+        <td>{{stagiaire.cin_stag}}</td>
+        <td>{{stagiaire.tel_stag}}</td>
+        <td>{{stagiaire.email_stag}}</td>
+        <td>{{stagiaire.specialite}}</td>
+        <td>{{stagiaire.etablissement}}</td>
+        <td>{{(stagiaire.duree_stag.startsWith("undefined"))? " " : stagiaire.duree_stag}}</td>
+        <td>{{stagiaire.date_depot_dossier}}</td>
+        <td>{{(stagiaire.type_stag.startsWith("undefined"))? " " : stagiaire.type_stag}}</td>
+
+        <td>{{stagiaire.etat_dossier}}</td>
+        <td *ngIf="stagiaire.sujet!=null">{{stagiaire.sujet.titre_sujet}}</td>
+        <td *ngIf="stagiaire.encadrant!=null">{{stagiaire.encadrant.nom_encadrant}} {{stagiaire.encadrant.prenom_encadrant}}</td>
+         
+      </tr>
+    </tbody>
+  </table>
+  <p>
+  </p>
+
+  

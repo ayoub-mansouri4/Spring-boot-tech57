@@ -1,0 +1,46 @@
+
+    <section class="d-flex justify-content-start" style="margin-bottom:1% ;">
+        <span  >
+            <button  class="btn btn-outline-info">
+                {{"Dashboard".toLocaleUpperCase()}} 
+            <i class="bi bi-caret-right"></i>
+            </button>
+            
+        </span>
+    <div *ngFor="let p of myPostion">
+        <span style="font-weight: bold;" *ngIf="p!=''" >
+            <span     *ngIf="p!='stagiaire' && p!='ajouter-stagiaire?avecSujet=false' && !p.startsWith('absence-stagiaire?id');"> 
+               <button class="btn btn-outline-info" (click)="buildUrl(p)">
+                {{(p.split("-").toString().replace(","," ").toLocaleUpperCase())}}
+                <i class="bi bi-caret-right"></i>
+               </button>
+            </span>
+            <span   *ngIf="p=='ajouter-stagiaire?avecSujet=false';">
+              <button class="btn btn-outline-info" (click)="buildUrl(p)">
+                {{"ajouter stagiaire".toLocaleUpperCase()}} 
+                <i class="bi bi-caret-right"></i>
+              </button>
+                
+            </span>
+            <span   *ngIf="p.startsWith('absence-stagiaire?id');">
+                <button class="btn btn-outline-info" (click)="buildUrl(p)">
+                  {{"absence stagiaire".toLocaleUpperCase()}} 
+                  <i class="bi bi-caret-right"></i>
+                </button>
+                  
+              </span>
+            <span role="button"   *ngIf="p=='stagiaire';">
+                <button class="btn btn-outline-info " (click)="buildUrl(p)">
+                    {{"Département".toLocaleUpperCase()}} {{(p.split("-").toString().replace(","," ").toLocaleUpperCase())}}
+                <i class="bi bi-caret-right"></i>
+                </button>
+                
+            </span>
+        </span>
+    </div>
+</section>
+   
+
+
+
+

@@ -1,0 +1,42 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+        <div id="form" class="w-100" style="margin-top:7%;">
+            <div class="row mb-4" id="1" class="d-flex w-100">
+              <div class="col w-75" >
+          <form  style="font-family: Arial, Helvetica, sans-serif;font-weight: bold;" class="w-100">
+              <div class="row mb-4">
+              <div class="col">
+              <!-- Text input -->
+
+             
+             
+             <!-- 2 column grid layout with text inputs for the first and last names -->
+             <div >
+               <label class="form-label" for="3">Ajouter un sujet de stage:</label>
+              <div  id="3">
+                  <div class="form-outline mb-4">
+                      <input type="text"  class="form-control" [(ngModel)]="sujet.titre_sujet" placeholder="Titre" name="titre_sujet"  />
+                  </div>
+                  <div class="form-outline mb-4">
+                      <textarea rows="4" type="text" [(ngModel)]="sujet.description_sujet"  class="form-control" placeholder="Description" name="description_sujet"  ></textarea>
+                    </div>
+  
+              </div>
+             </div>
+            
+          </div></div>
+              <!-- Submit button -->
+              <button (click)="ajouter()" class="btn btn-primary w-25 mb-4" >Ajouter</button>
+            </form>
+            </div>
+            
+          </div>
+          
+            
+          </div>
+     </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+    <div   style="float: right;width: 70%;">
+        <div class="container"   >
+            <div class="row " style="height:50% ;" >
+                <div class="col"  style="height: 30%;" >
+                    <button routerLink="/stagiaire/type-stagiaire/ajouter-stagiaire" class="btn btn-success" style="height: 100%;width: 100%;"> 
+                        {{"stagiaire avec sujet".toLocaleUpperCase()}}
+                    </button>
+                   </div>
+                <div class="col "  style="height: 30%;">
+                    <button routerLink="/stagiaire/type-stagiaire/ajouter-stagiaire" [queryParams]="{avecSujet:false}" class="btn btn-warning" style="height: 100%;width: 100%;">
+                        {{"stagiaire sans sujet".toLocaleUpperCase()}}
+                    </button>
+                </div>
+                
+               
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

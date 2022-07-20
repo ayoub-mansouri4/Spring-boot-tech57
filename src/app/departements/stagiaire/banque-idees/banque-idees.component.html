@@ -1,0 +1,33 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+       
+          
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numéro sujet</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sujet of sujets">
+        <th scope="row">{{sujet.id_sujet}}</th>
+        <td>{{sujet.titre_sujet}}</td>
+        <td>{{sujet.description_sujet}}</td>
+      </tr>
+    </tbody>
+  </table>
+          
+     </div>
+    </div>
+</section>
+
+

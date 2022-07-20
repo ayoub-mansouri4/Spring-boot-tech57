@@ -1,0 +1,20 @@
+
+<section id="menu" >
+  
+  <p style="font-weight:bold ;font-size: 300%;text-align: center;">
+    <span style="color:rgb(30, 127, 165) ;">Tech</span><span style="color:rgb(66, 65, 65);">-57</span>
+  </p>
+  <p style="font-weight:bold ">
+    Responsable : {{user_name}}
+  </p>
+
+
+ 
+  <div id="sub_menu"  *ngFor="let departement of departements" style="text-align: center;" >
+    <a href="" style="height: 40px;margin-bottom: 1% ;" type="button"[routerLink]="'/'+departement.nom" class="item" *ngIf="departement.estAccessible"><p>
+      Département {{departement.nom.toLocaleUpperCase()}}
+    </p></a>   
+</div>
+
+<button class="btn btn-dark" >Se deconnecter</button>
+</section>

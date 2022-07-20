@@ -1,0 +1,28 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">  
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Stagiaire: {{stagiaire.nom_stag}} {{stagiaire.prenom_stag}}</th>
+                <th scope="col">Date (aaaa/mm/jj)</th>
+                <th scope="col">Absence</th>
+                
+        
+        
+        
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let absence of stagiaire.absences">
+                <th scope="row"></th>
+                <td *ngIf="stagiaire.absences!=null">{{absence.date_absence}}</td>
+                <td *ngIf="stagiaire.absences!=null">{{(absence.estAbsent==false) ? "Présent(e)":"Absent(e)"}}</td>
+              </tr>
+            </tbody>
+          </table>        
+     </div>
+    </div>
+</section>

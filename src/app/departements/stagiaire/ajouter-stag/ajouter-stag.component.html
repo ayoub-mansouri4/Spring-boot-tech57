@@ -1,0 +1,135 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+        <div id="form" class="w-100" >
+            <div class="row mb-4" id="1" class="d-flex w-100">
+              <div class="col w-75" >
+          <form  style="font-family: Arial, Helvetica, sans-serif;font-weight: bold;" class="w-100">
+              <div class="row mb-4">
+              <div class="col">
+              <!-- Text input -->
+
+              <div class="row mb-4" id="3">
+                <div class="col">
+                    <div class="form-outline">
+                      <input type="text"  class="form-control" [(ngModel)]="stagiaire.nom_stag" placeholder="Nom" name="nom_stag"  />
+                    </div>
+                  </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text"  class="form-control" [(ngModel)]="stagiaire.prenom_stag" placeholder="Prenom" name="prenom_stag" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4" id="3">
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text"  class="form-control" [(ngModel)]="stagiaire.cin_stag" placeholder="CIN" name="cin_stag"  />
+                    </div>
+                  </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text"  class="form-control" [(ngModel)]="stagiaire.etablissement" placeholder="Etablissement" name="etablissement" />
+                  </div>
+                </div>
+              </div>
+            
+
+
+               <!-- Text input -->
+               <div class="form-outline mb-4">
+                <input type="email"  class="form-control" placeholder="Email" [(ngModel)]="stagiaire.email_stag" name="email_stag"  />
+              </div>
+               <!-- Text input -->
+               <div class="form-outline mb-4">
+                <input type="text"  class="form-control" [(ngModel)]="stagiaire.tel_stag" placeholder="Numéro de téléphone" name="tel_stag"  />
+              </div>
+
+
+          
+              <div class="form-group">
+                  <label for="4">Type de stage  :</label>
+                  <select class="form-control" [(ngModel)]="stagiaire.type_stag" id="4" name="type_stag" >
+                    <option value="Stage d'étude" selected>Stage d'étude</option>
+                    <option value="Stage libre">Stage libre</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="4">Stage d'étude <span style="color: rgb(255, 153, 0);">(si oui)</span> :</label>
+                <select class="form-control" id="4" [(ngModel)]="type_stage_etude" name="type_stage_etude" >
+                  <option value="PFE">PFE</option>
+                  <option value="PFA">PFA</option>
+                  <option value="Stage initiation">Stage initiation</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+              <label for="4">Etat dossier</label>
+              <select class="form-control" id="4" [(ngModel)]="stagiaire.etat_dossier" name="etat_dossier" >
+                <option value="dossier complet">dossier complet</option>
+                <option value="dossier incomplet">dossier incomplet</option>
+              </select>
+          </div>
+          </div>
+          
+          <div class="col">
+            <div class="form-outline mb-4">
+                <input type="text"  class="form-control" [(ngModel)]="stagiaire.specialite" placeholder="Spécialité" name="specialite"  />
+              </div>
+
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <label class="form-label" for="1">Date dépot dossier (mm/jj/aaaa) :</label>
+             <div class="row mb-4" id="1">
+              <div class="col" >
+                <div class="form-outline">
+                  <input type="date"   [(ngModel)]="stagiaire.date_depot_dossier" class="form-control" name="date_depot_dossier"  />
+                </div>
+              </div> 
+            </div>
+          
+             <!-- 2 column grid layout with text inputs for the first and last names -->
+             <label class="form-label" for="2">Durée (mm/jj/aaaa) :</label>
+             <div class="row mb-4" id="2">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="date" [(ngModel)]="stagiaire.duree_stag"  class="form-control" name="duree_stag"  />
+                </div>
+              </div>
+              <span>-</span>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="date"  class="form-control" [(ngModel)]="part2_duree" name="part2_duree" />
+                </div>
+              </div>
+            </div>
+          
+             
+             <!-- 2 column grid layout with text inputs for the first and last names -->
+             <div *ngIf="!avecSujet">
+               <label class="form-label" for="3">Sujet de stage :</label>
+              <div  id="3">
+                  <div class="form-outline mb-4">
+                      <input type="text"  class="form-control" [(ngModel)]="sujet.titre_sujet" placeholder="Titre" name="titre_sujet"  />
+                  </div>
+                  <div class="form-outline mb-4">
+                      <textarea rows="4" type="text" [(ngModel)]="sujet.description_sujet"  class="form-control" placeholder="Description" name="description_sujet"  ></textarea>
+                    </div>
+              </div>
+             </div>
+            
+          </div></div>
+              <!-- Submit button -->
+              <button (click)="ajouterStagiaire()"  class="btn btn-primary w-25 mb-4"   >Ajouter</button>
+            </form>
+            </div>
+            
+          </div>
+          
+            
+          </div>
+     </div>
+    </div>
+</section>
