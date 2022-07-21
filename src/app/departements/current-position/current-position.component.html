@@ -9,7 +9,7 @@
         </span>
     <div *ngFor="let p of myPostion">
         <span style="font-weight: bold;" *ngIf="p!=''" >
-            <span     *ngIf="p!='stagiaire' && p!='ajouter-stagiaire?avecSujet=false' && !p.startsWith('absence-stagiaire?id');"> 
+            <span     *ngIf="p!='stagiaire' && p!='ajouter-stagiaire?avecSujet=false' && !p.startsWith('absence-stagiaire?id') && p!='formation';"> 
                <button class="btn btn-outline-info" (click)="buildUrl(p)">
                 {{(p.split("-").toString().replace(","," ").toLocaleUpperCase())}}
                 <i class="bi bi-caret-right"></i>
@@ -25,6 +25,13 @@
             <span   *ngIf="p.startsWith('absence-stagiaire?id');">
                 <button class="btn btn-outline-info" (click)="buildUrl(p)">
                   {{"absence stagiaire".toLocaleUpperCase()}} 
+                  <i class="bi bi-caret-right"></i>
+                </button>
+                  
+              </span>
+              <span   *ngIf="p=='formation'">
+                <button class="btn btn-outline-info" (click)="buildUrl(p)">
+                  {{"Département formation".toLocaleUpperCase()}} 
                   <i class="bi bi-caret-right"></i>
                 </button>
                   

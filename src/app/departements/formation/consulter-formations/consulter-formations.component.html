@@ -1,0 +1,40 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+       
+          
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numéro de formation</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Formateur</th>
+        <th scope="col">Nombre des participants</th>
+
+
+        
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of formations">
+        <th scope="row">{{f.id_formation}}</th>
+        <td>{{f.titre_formation}}</td>
+        <td>{{f.description}}</td>
+        <td *ngIf="f.formateur!=null">{{f.formateur.nom_formateur}} {{f.formateur.prenom_formateur}}</td>
+        <td *ngIf="f.participants!=null">{{f.participants.length}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+          
+     </div>
+    </div>
+</section>
+
+

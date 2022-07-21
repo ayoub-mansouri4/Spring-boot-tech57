@@ -1,0 +1,38 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+       
+          
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numéro</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Formation</th>
+
+
+        
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let formateur of formateurs">
+        <th scope="row">{{formateur.id_formateur}}</th>
+        <td>{{formateur.nom_formateur}}</td>
+        <td>{{formateur.prenom_formateur}}</td>
+        <td *ngIf="formateur.formation!=null">{{formateur.formation.titre_formation}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+          
+     </div>
+    </div>
+</section>
+
+

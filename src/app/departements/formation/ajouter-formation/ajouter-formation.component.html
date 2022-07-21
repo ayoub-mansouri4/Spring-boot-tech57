@@ -1,0 +1,57 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+        <div id="form" class="w-100" style="margin-top:7%;">
+            <div class="row mb-4" id="1" class="d-flex w-100">
+              <div class="col w-75" >
+          <form   class="w-100">
+              <div class="row mb-4">
+              <div class="col">
+              <!-- Text input -->
+
+             
+             
+             <!-- 2 column grid layout with text inputs for the first and last names -->
+             <div >
+               <label class="form-label"  for="3" style="font-family: Arial, Helvetica, sans-serif;font-weight: bold;" >Ajouter une formation</label>
+              <div  id="3">
+                <label class="form-label"  for="1">Date de début (mm/jj/aaaa) :</label>
+                <div class="row mb-4" id="1">
+                 <div class="col" >
+                   <div class="form-outline">
+                     <input type="date"    class="form-control" [(ngModel)]="formation.date_formation" name="date_formation"   />
+                   </div>
+                 </div> 
+               </div>
+               <div class="form-outline mb-4">
+                <input rows="4" type="text"   class="form-control" placeholder="Numero de salle" [(ngModel)]="formation.numero_salle" name="numero_salle"   >
+              </div>
+              <div class="form-outline mb-4">
+                <input rows="4" type="text"   class="form-control" placeholder="Titre" [(ngModel)]="formation.titre_formation" name="titre_formation"  >
+              </div>
+                  <div class="form-outline mb-4">
+                      <textarea rows="4" type="text"   class="form-control" placeholder="Description" [(ngModel)]="formation.description" name="description"  ></textarea>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input rows="4" type="number"   class="form-control" placeholder="Nombre des seances" [(ngModel)]="formation.nbr_seance" name="nbr_seance" >
+                      </div>
+  
+              </div>
+             </div>
+            
+          </div>
+        </div>
+              <!-- Submit button -->
+              <button  class="btn btn-primary w-25 mb-4" >Ajouter</button>
+            </form>
+            </div>
+            
+          </div>
+          
+            
+          </div>
+     </div>
+    </div>
+</section>

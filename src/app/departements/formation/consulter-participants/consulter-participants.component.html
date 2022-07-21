@@ -1,0 +1,36 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+        <div class="form-group">
+            <label for="21"> Choisir une formation :</label>
+            <select class="form-control" id="21" [(ngModel)]="id_formation"  name="id_formation" >
+              <option *ngFor="let formation of formations"  [value]="formation.id_formation">{{formation.titre_formation}}</option>
+            </select>
+        </div>
+        <button  class="btn btn-primary w-25 mb-4" >Afficher</button>
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numéro</th>
+        <th scope="col">Nom  </th>
+        <th scope="col">Prénom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of participants">
+        <th scope="row">{{p.numero_participant}}</th>
+        <td>{{p.nom_participant}}</td>
+        <td>{{p.prenom_participant}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+          
+     </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,52 @@
+<section  >
+    <app-menu  id="menu" style="float:left;width: 20%;"></app-menu>
+    <div style="height:100vh">
+    <app-current-position></app-current-position>
+     <div style="float: right;width: 70%">
+        <div id="form" class="w-100" style="margin-top:7%;">
+            <div class="row mb-4" id="1" class="d-flex w-100">
+              <div class="col w-75" >
+          <form  class="w-100">
+              <div class="row mb-4">
+              <div class="col">
+              <!-- Text input -->
+
+             
+             
+             <!-- 2 column grid layout with text inputs for the first and last names -->
+             <div >
+               <label class="form-label" style="font-family: Arial, Helvetica, sans-serif;font-weight: bold;"  for="3">Ajouter un participant</label>
+              <div  id="3">
+                <div class="form-group">
+                    <label for="21"> Choisir une formation :</label>
+                    <select class="form-control" id="21" [(ngModel)]="id_formation"  name="id_formation" >
+                      <option *ngFor="let formation of formations"  [value]="formation.id_formation">{{formation.titre_formation}}</option>
+                    </select>
+                </div>
+               <div class="form-outline mb-4">
+                <input rows="4" type="text"   class="form-control" placeholder="Nom" [(ngModel)]="participant.nom_participant" name="nom_participant"   >
+              </div>
+                  <div class="form-outline mb-4">
+                      <input rows="4" type="text"   class="form-control" placeholder="Prénom" [(ngModel)]="participant.prenom_participant" name="prenom_participant"  >
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input rows="4" type="text"   class="form-control" placeholder="Numéro" [(ngModel)]="participant.numero_participant" name="numero_participant" >
+                      </div>
+  
+              </div>
+             </div>
+            
+          </div>
+        </div>
+              <!-- Submit button -->
+              <button  class="btn btn-primary w-25 mb-4" >Ajouter</button>
+            </form>
+            </div>
+            
+          </div>
+          
+            
+          </div>
+     </div>
+    </div>
+</section>
