@@ -51,7 +51,7 @@ import { ConsulterFormateursComponent } from './departements/formation/consulter
     ConsulterFormationsComponent,
     ConsulterParticipantsComponent,
     ConsulterFormateursComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

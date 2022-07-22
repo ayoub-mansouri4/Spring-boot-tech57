@@ -4,6 +4,9 @@
     <app-current-position></app-current-position>
      <div style="float: right;width: 70%">
         <div id="form" class="w-100" style="margin-top:7%;">
+          <div class="alert alert-success w-50" style="margin:0 auto;text-align: center;" *ngIf="isDone" role="alert">
+            L'opération est effectuée avec succès 
+          </div>
             <div class="row mb-4" id="1" class="d-flex w-100">
               <div class="col w-75" >
           <form  class="w-100">
@@ -39,7 +42,7 @@
           </div>
         </div>
               <!-- Submit button -->
-              <button  class="btn btn-primary w-25 mb-4" >Ajouter</button>
+              <button  class="btn btn-primary w-25 mb-4" (click)="ajouter()" >Ajouter</button>
             </form>
             </div>
             
